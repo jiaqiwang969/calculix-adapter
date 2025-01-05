@@ -46,8 +46,9 @@ LIBS = \
 	-lstdc++ \
 	-lc++ \
 	$(YAML_LIBS) \
-	$(ARPACK_LIBS) \
-	-lpthread -lm -lc
+	$(ARPACK_LIBS) 
+
+#-lpthread -lm -lc
 
 # Compilers and flags
 #CFLAGS = -g -Wall -std=c++11 -O0 -fopenmp $(INCLUDES) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE
