@@ -44,7 +44,6 @@ LIBS = \
 	$(SPOOLES_LIBS) \
 	$(PKGCONF_LIBS) \
 	-lc++ \
-	-lstdc++ \
 	$(YAML_LIBS) \
 	$(ARPACK_LIBS) \
 	-lpthread -lm -lc
@@ -82,7 +81,7 @@ $(OBJDIR)/%.o : %.f
 $(OBJDIR)/%.o : adapter/%.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 $(OBJDIR)/%.o : adapter/%.cpp
-	g++ -std=c++11 $(CFLAGS) $(INCLUDES) -c $< -o $@ $(LIBS)
+	g++ -std=c++11 $(CFLAGS) $(INCLUDES) -c $< -o $@
 	#$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ $(LIBS)
 
 # Source files in the $(CCX) folder
