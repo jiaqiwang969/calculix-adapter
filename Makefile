@@ -43,6 +43,7 @@ INCLUDES = \
 LIBS = \
 	$(SPOOLES_LIBS) \
 	$(PKGCONF_LIBS) \
+	-lstdc++ \
 	-lc++ \
 	$(YAML_LIBS) \
 	$(ARPACK_LIBS) \
@@ -52,7 +53,7 @@ LIBS = \
 #CFLAGS = -g -Wall -std=c++11 -O0 -fopenmp $(INCLUDES) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE
 #FFLAGS = -g -Wall -O0 -fopenmp $(INCLUDES)
 
-CFLAGS = -Wall -O3 -fopenmp $(INCLUDES) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DUSE_MT
+CFLAGS = -Wall -O3 -std=c++11 -fopenmp $(INCLUDES) -DSPOOLES -DARPACK -DMATRIXSTORAGE -DUSE_MT
 
 # OS-specific options
 CC = mpicc
