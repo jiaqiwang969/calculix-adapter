@@ -61,19 +61,14 @@ LIBS = \
 #CFLAGS = -g -Wall -std=c++11 -O0 -fopenmp $(INCLUDES) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE
 #FFLAGS = -g -Wall -O0 -fopenmp $(INCLUDES)
 
-CFLAGS = -Wall -O3 -fopenmp $(INCLUDES) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DUSE_MT
-CFLAGS =  -w  -O3 -fopenmp $(INCLUDES) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DUSE_MT
+CFLAGS = -Wall -O3 -fopenmp $(INCLUDES) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DNETWORKOUT
+#CFLAGS =  -w  -O3 -fopenmp $(INCLUDES) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DUSE_MT
 
 # OS-specific options
-UNAME_S := $(shell uname -s)
-ifeq ($(UNAME_S),Darwin)
-	CC = /usr/local/bin/gcc
-else
-	CC = mpicc
-endif
+CC = mpicc
 
 FFLAGS = -Wall -O3 -fopenmp $(INCLUDES) ${ADDITIONAL_FFLAGS}
-FFLAGS =  -w   -fallow-argument-mismatch  -O3 -fopenmp $(INCLUDES) $(ADDITIONAL_FFLAGS)
+#FFLAGS =  -w   -fallow-argument-mismatch  -O3 -fopenmp $(INCLUDES) $(ADDITIONAL_FFLAGS)
 # Note for GCC 10 or newer: add -fallow-argument-mismatch in the above flags
 FC = mpifort
 # FC = mpif90
@@ -97,7 +92,7 @@ $(OBJDIR)/%.o : %.f
 $(OBJDIR)/%.o : adapter/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 $(OBJDIR)/%.o : adapter/%.cpp
-	$(CC) -std=c++11 $(INCLUDES) -c $< -o $@ $(LIBS)
+	g++ -std=c++11 $(INCLUDES) -c $< -o $@ $(LIBS)
 	# g++ -std=c++11 $(YAML_INCLUDE) -c $< -o $@ $(LIBS)
 	# $(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ $(LIBS)
 
@@ -115,7 +110,7 @@ OCCXC += $(OBJDIR)/ConfigReader.o $(OBJDIR)/2D3DCoupling.o $(OBJDIR)/OutputBuffe
 
 
 $(OBJDIR)/ccx_preCICE: $(OBJDIR) $(OCCXMAIN) $(OBJDIR)/ccx_$(CCX_VERSION).a
-	$(FC) -fopenmp -Wall -O3 -o $@ $(OCCXMAIN) $(OBJDIR)/ccx_$(CCX_VERSION).a $(LIBS)
+	$(FC) -fopenmp -Wall -O3 -o $@ $(OCCXMAIN) $(OBJDIR)/ccx_$(CCX_VERSION).a $(LIBS) 
 #	$(FC) -fopenmp -Wall -O3 $(OCCXMAIN) $(OBJDIR)/ccx_$(CCX_VERSION).a $(LIBS) -o $@
 
 # $(LIBS)
