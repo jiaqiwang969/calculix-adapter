@@ -43,6 +43,7 @@ INCLUDES = \
 LIBS = \
 	$(SPOOLES_LIBS) \
 	$(PKGCONF_LIBS) \
+	-lc++ \
 	-lstdc++ \
 	$(YAML_LIBS) \
 	$(ARPACK_LIBS) \
