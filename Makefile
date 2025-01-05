@@ -55,12 +55,7 @@ LIBS = \
 CFLAGS = -Wall -O3 -fopenmp $(INCLUDES) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DUSE_MT
 
 # OS-specific options
-UNAME_S := $(shell uname -s)
-ifeq ($(UNAME_S),Darwin)
-	CC = /usr/local/bin/gcc
-else
-	CC = mpicc
-endif
+CC = mpicc
 
 FFLAGS = -Wall -O3 -fopenmp $(INCLUDES) ${ADDITIONAL_FFLAGS}
 # Note for GCC 10 or newer: add -fallow-argument-mismatch in the above flags
@@ -84,9 +79,9 @@ $(OBJDIR)/%.o : %.c
 $(OBJDIR)/%.o : %.f
 	$(FC) $(FFLAGS) -c $< -o $@
 $(OBJDIR)/%.o : adapter/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 $(OBJDIR)/%.o : adapter/%.cpp
-	g++ -std=c++11 $(YAML_INCLUDE) -c $< -o $@ $(LIBS)
+	g++ -std=c++11 $(CFLAGS) $(INCLUDES) -c $< -o $@ $(LIBS)
 	#$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ $(LIBS)
 
 # Source files in the $(CCX) folder
