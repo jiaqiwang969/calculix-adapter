@@ -1,5 +1,5 @@
 !     
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !     Copyright (C) 1998-2023 Guido Dhondt
 !     
 !     This program is free software; you can redistribute it and/or
@@ -68,7 +68,7 @@
 !     icritic            0: Kc is nowhere reached
 !                        <0: nowhere propagation      
 !                        >0: Kc is reached in at least one front-node:
-!                            CalculiX will stop after returning from
+!                            Jtufem will stop after returning from
 !                            this subroutine
 !     wk1(i)             worst K1-factor in front-node i; 
 !                        wk1(i) = xk1(m,i) if dabs(xk1(m,i)) is maximal
@@ -86,7 +86,7 @@
 !                        front-node i
 !     ier                error parameter;
 !                        0: no error occurred in the present routine
-!                        1: an error occurred and CalculiX should stop
+!                        1: an error occurred and Jtufem should stop
 !
       implicit none
 !

@@ -20,7 +20,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 #define GOOD 0
 #define BAD 1

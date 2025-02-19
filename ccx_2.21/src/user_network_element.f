@@ -1,5 +1,5 @@
 !
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !     Copyright (C) 1998-2023 Guido Dhondt
 !     
 !     This program is free software; you can redistribute it and/or
@@ -39,7 +39,7 @@
 !     list of different user network elements
 !
 !     notice that the input deck is converted into upper case when
-!     being read by CalculiX. So even if the user has specified "p1"
+!     being read by Jtufem. So even if the user has specified "p1"
 !     in his input deck, at the present stage "P1" is stored.
 !
       if((lakon(nelem)(3:4).eq.'P0').or.

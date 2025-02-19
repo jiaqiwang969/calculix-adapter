@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                   */
+/*     Jtufem - A 3-dimensional finite element program                   */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -19,7 +19,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 #ifdef SPOOLES
 #include "spooles.h"
@@ -761,7 +761,7 @@ void steadystate(double **cop,ITG *nk,ITG **konp,ITG **ipkonp,char **lakonp,ITG 
 
     if(nherm!=1){
       printf("ERROR in steadystate: structural damping and/or dashpot elements \n");
-      printf("      cannot be combined with non-Hermitian systems (in the present version of CalculiX)\n");
+      printf("      cannot be combined with non-Hermitian systems (in the present version of Jtufem)\n");
       FORTRAN(stop,());
     }
 
@@ -790,7 +790,7 @@ void steadystate(double **cop,ITG *nk,ITG **konp,ITG **ipkonp,char **lakonp,ITG 
   if(coriolis){
     if(nherm!=1){
       printf(" *WARNING in steadystate: centrifugal loading cannot be combined \n");
-      printf("          with non-Hermitian systems (in the present version of CalculiX)\n");
+      printf("          with non-Hermitian systems (in the present version of Jtufem)\n");
       printf("          it is deactivated\n");
       for(i=0;i<*nbody;i++){
 	if(abs(ibody[3*i])==4){

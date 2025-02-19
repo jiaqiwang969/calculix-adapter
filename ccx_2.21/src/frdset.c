@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -19,7 +19,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 void frdset(char *filabl,char *set,ITG *iset,ITG *istartset,ITG *iendset,
 	    ITG *ialset,ITG *inum,ITG *noutloc,ITG *nout,ITG *nset,
@@ -92,7 +92,7 @@ void frdset(char *filabl,char *set,ITG *iset,ITG *istartset,ITG *iendset,
 
 
      /*!
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !              Copyright (C) 1998-2023 Guido Dhondt
 !
 !     This program is free software; you can redistribute it and/or

@@ -1,5 +1,5 @@
 !
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !              Copyright (C) 1998-2023 Guido Dhondt
 !
 !     This program is free software; you can redistribute it and/or
@@ -66,7 +66,7 @@
             write(*,*) '*WARNING reading *COMPLEX FREQUENCY:'
             write(*,*) '         for this keyword'
             write(*,*) '         STORAGE=YES is deactivated'
-            write(*,*) '         in the CalculiX code'
+            write(*,*) '         in the Jtufem code'
 
 c            mei(4)=1
          else

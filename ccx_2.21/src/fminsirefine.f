@@ -30,7 +30,7 @@ C Author: Hugo Pfoertner, Oberhaching, Germany
 C
 C Version History (German Language kept for authenticity ;-)
 C
-! 22.06.21 adapted fminsi for the mesh refinement procedure in CalculiX
+! 22.06.21 adapted fminsi for the mesh refinement procedure in Jtufem
 !          Author: Guido Dhondt
 C 21.05.05 Tentative doubleprecision version
 C 03.06.01 Translation finished, additional comments added, LGPL

@@ -1,5 +1,5 @@
 !     
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !     Copyright (C) 1998-2023 Guido Dhondt
 !     
 !     This program is free software; you can redistribute it and/or
@@ -1260,7 +1260,7 @@ c     &       lakon,ne,nload,sideload,ipkon,kon,nelemload,ier)
       if(ier.ge.1) then
         write(*,*) '*ERROR in calinput: at least one fatal'
         write(*,*) '       error message while reading the'
-        write(*,*) '       input deck: CalculiX stops.'
+        write(*,*) '       input deck: Jtufem stops.'
         write(*,*)
         call exit(201)
       endif
@@ -1756,7 +1756,7 @@ c!
 c      if(ier.ge.1) then
 c        write(*,*) '*ERROR in calinput: at least one fatal'
 c        write(*,*) '       error message while reading the'
-c        write(*,*) '       input deck: CalculiX stops.'
+c        write(*,*) '       input deck: Jtufem stops.'
 c        write(*,*)
 c        call exit(201)
 c      endif

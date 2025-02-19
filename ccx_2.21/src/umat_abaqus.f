@@ -1,5 +1,5 @@
 !
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !              Copyright (C) 1998-2023 Guido Dhondt
 !
 !     This program is free software; you can redistribute it and/or
@@ -110,22 +110,22 @@
 !                        anisotropic elastic material (*ELASTIC,TYPE=ANISO).
 !
 !     This routine allows for the use of an ABAQUS umat user subroutine
-!     in CalculiX. 
+!     in Jtufem. 
 !
 !     Note that the following fields are not supported
 !     so far: sse,spd,scd,rpl,ddsddt,drplde,drpldt,predef,
 !     dpred,drot,pnewdt,celent,layer,kspt
 !
 !     Furthermore, the following fields have a different meaning in
-!     ABAQUS and CalculiX:
+!     ABAQUS and Jtufem:
 !
-!     stran: in CalculiX: Lagrangian strain tensor
+!     stran: in Jtufem: Lagrangian strain tensor
 !              in ABAQUS: logarithmic strain tensor
-!     dstran: in CalculiX: Lagrangian strain increment tensor
+!     dstran: in Jtufem: Lagrangian strain increment tensor
 !              in ABAQUS: logarithmic strain increment tensor
-!     temp:  in CalculiX: temperature at the end of the increment
+!     temp:  in Jtufem: temperature at the end of the increment
 !              in ABAQUS: temperature at the start of the increment
-!     dtemp: in CalculiX: zero
+!     dtemp: in Jtufem: zero
 !              in ABAQUS: temperature increment
 !
 !     Because of this, this routine should only be used for small

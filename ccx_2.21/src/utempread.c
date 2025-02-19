@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -23,7 +23,7 @@
 #include <fcntl.h>
 #include <ctype.h>
 
-#include "CalculiX.h"
+#include "Jtufem.h"
 #include "readfrd.h"
 
 void utempread (double *t1,ITG *istep,char *jobnamec)

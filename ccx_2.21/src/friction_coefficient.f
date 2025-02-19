@@ -1,5 +1,5 @@
 !
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !     Copyright (C) 1998-2023 Guido Dhondt
 !     
 !     This program is free software; you can redistribute it and/or
@@ -26,7 +26,7 @@
 !
 !     INPUT:      
 !
-!     l           not used in internet-version of CalculiX
+!     l           not used in internet-version of Jtufem
 !     d           hydraulic diameter=4*area/(wetted perimeter)
 !     ks          grain size
 !     reynolds    Reynolds number 

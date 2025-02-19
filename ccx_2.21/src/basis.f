@@ -1,5 +1,5 @@
 !     
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !     Copyright (C) 1998-2023 Guido Dhondt
 !     
 !     This program is free software; you can redistribute it and/or
@@ -61,7 +61,7 @@
 !     nfield          maximum number of available field in the master mesh
 !     cotet(3,*)      coordinates of the tet nodes
 !     kontyp(i)       type of parent element i (convention for the types as
-!                     in CalculiX GraphiX)
+!                     in Jtufem GraphiX)
 !     ipkon(i)        entry before the start of the topology description
 !                     for parent element i (= list of nodes belonging to the
 !                     element) in field kon

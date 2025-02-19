@@ -1,5 +1,5 @@
 !
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !     Copyright (C) 1998-2023 Guido Dhondt
 !     
 !     This program is free software; you can redistribute it and/or
@@ -75,7 +75,7 @@
 !     
       close(10)
 !     
-!     check whether the CalculiX version in the viewfactor file corresponds
+!     check whether the Jtufem version in the viewfactor file corresponds
 !     with the actual version
 !
 !     string includes the last nonblank character
@@ -120,11 +120,11 @@
       enddo
 !
       if(versionvwf(1:lengthvwf).ne.version(1:length)) then
-         write(*,*) '*ERROR in readview: CalculiX ',
+         write(*,*) '*ERROR in readview: Jtufem ',
      &      versionvwf(1:lengthvwf)
          write(*,*) '       in viewfactor file ',
      %           fnvw(1:index(fnvw,' ')-1),' does not'
-         write(*,*) '       correspond to the actual CalculiX ',
+         write(*,*) '       correspond to the actual Jtufem ',
      &         version(1:length)
          write(*,*)
          call exit(201)

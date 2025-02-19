@@ -4,7 +4,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 /*---------------------------------------------------------------------*/
 /* Strings vergleichen (bis zu welchem character sind sie gleich?)     */

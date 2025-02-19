@@ -1,5 +1,5 @@
 !
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !              Copyright (C) 1998-2023 Guido Dhondt
 !
 !     This program is free software; you can redistribute it and/or
@@ -21,7 +21,7 @@
      &        icmd,ielas,mi,nstate_,xstateini,xstate,stre,elas,
      &        iorien,pgauss,orab,istep,kinc,pnewdt,nmethod,iperturb)
 !
-!     converting nonlinear fields used by CalculiX into nonlinear
+!     converting nonlinear fields used by Jtufem into nonlinear
 !     fields used by Abaqus and vice versa.
 !
 !     before the umat call: convert the Lagrange strain into

@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                   */
+/*     Jtufem - A 3-dimensional finite element program                   */
 /*              Copyright (C) 1998-2023 Guido Dhondt                       */
 /*	        Copyright (c) 2016 Jean-Marie Verdun 			 */
 
@@ -21,7 +21,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 #include "tau.h"
 #include <taucs.h>
 

@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -20,7 +20,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 void elementcpuload(ITG *neapar,ITG *nebpar,ITG *ne,ITG *ipkon,ITG *num_cpus){
 

@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -19,7 +19,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 #define min(a,b) ((a) <= (b) ? (a) : (b))
 #define max(a,b) ((a) >= (b) ? (a) : (b))
@@ -198,9 +198,9 @@ void frd(double *co,ITG *nk,ITG *kon,ITG *ipkon,char *lakon,ITG *ne0,
     fprintf(f1,"%5sUDATE              %20s                            \n",p1,newdate);
     fprintf(f1,"%5sUTIME              %8s                                        \n",p1,newclock);
     fprintf(f1,"%5sUHOST                                                              \n",p1);
-    fprintf(f1,"%5sUPGM               CalculiX                                        \n",p1);
+    fprintf(f1,"%5sUPGM               Jtufem                                        \n",p1);
     fprintf(f1,"%5sUVERSION           Version 2.21                             \n",p1);
-    fprintf(f1,"%5sUCOMPILETIME       Чт 03 авг 2023 19:01:20 EEST                    \n",p1);
+    fprintf(f1,"%5sUCOMPILETIME       Sat Jul 29 10:52:01 CEST 2023                    \n",p1);
     fprintf(f1,"%5sUDIR                                                               \n",p1);
     fprintf(f1,"%5sUDBN                                                               \n",p1);
     

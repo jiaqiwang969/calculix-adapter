@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                     */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -32,7 +32,7 @@ typedef HINSTANCE* lib_handler;
 typedef void* lib_handler;
 #endif
 
-#include"CalculiX.h"
+#include"Jtufem.h"
 
 static const char* search(const char *b,
 			  const char *e,

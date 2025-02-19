@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -27,7 +27,7 @@ _set_output_format(_TWO_DIGIT_EXPONENT);
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 #ifdef CALCULIX_MPI
 ITG myid = 0,nproc = 0;
@@ -35,7 +35,7 @@ ITG myid = 0,nproc = 0;
 
 struct timespec totalCalculixTimeStart,totalCalculixTimeEnd; 
 
-void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
+void Jtufemstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
 		  ITG *nload,char **sideloadp,double *timepar,ITG *ne,
                   ITG **ipkonp,ITG **konp,char **lakonp,ITG *nk,double **cop,
                   double **voldp,double **veoldp,double **accoldp,
@@ -115,8 +115,8 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
                     the fluid; for this surface the work will be calculated at 
                     the end of the present routine before returning the control
                     to the calling program. The surface must be defined in the
-                    CalculiX input deck as a facial surface, i.e. consisting of
-                    faces (not nodes). In the calling program of CalculiXstep 
+                    Jtufem input deck as a facial surface, i.e. consisting of
+                    faces (not nodes). In the calling program of Jtufemstep 
                     there must be a blank behind this name.
 
      delexternalwork (double): total external work on the faces contained in 
@@ -124,12 +124,12 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
                                during this call
 
      inputsteps (ITG): number of steps to be read from the input deck. This 
-                       requires (inputsteps) calls to CalculiXstep.c. Call 
+                       requires (inputsteps) calls to Jtufemstep.c. Call 
                        (inputsteps+1) is the first call for which the input 
                        deck is not further read, i.e. in this call the 
                        information from step (inputsteps) is taken, possibly
                        modified by the information transferred by the user into
-                       CalculiXstep.c through the argument list.
+                       Jtufemstep.c through the argument list.
 
      iperturb(1) (ITG): perturbation parameter: specifies which nonlinear 
                         procedure is to be selected. Should not be changed by 
@@ -145,13 +145,13 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
                            jobname.rout
                    Remark: reading a restart file is obtained by inserting 
                            *restart,read as first executable statement in a 
-                           CalculiX input deck
+                           Jtufem input deck
                  
      irstrt(2) (ITG): if 0: no OVERLAY while writing a restart file
                       if 1: OVERLAY while writing a restart file
                 
      filab(87*nlabel): character field telling which fields have to be stored 
-                       for which sets (cf. CalculiX manual for more details). 
+                       for which sets (cf. Jtufem manual for more details). 
                        Setting this field to blank suppresses any
                        frd-output
 
@@ -164,7 +164,7 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
   // start change DLR
 
   /* the contents of all variables has to be kept between two calls of
-     CalculiXstep, therefore they are declared as static */
+     Jtufemstep, therefore they are declared as static */
   
   static FILE *f1;
     
@@ -261,12 +261,12 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
    
     clock_gettime(CLOCK_MONOTONIC, &totalCalculixTimeStart);
 
-    if(argc==1){printf("Usage: CalculiX.exe -i jobname\n");FORTRAN(stop,());}
+    if(argc==1){printf("Usage: Jtufem.exe -i jobname\n");FORTRAN(stop,());}
     else{
       for(i=1;i<argc;i++){
 	if(strcmp1(argv[i],"-i")==0) {
 	  if(strlen(argv[i+1])>127){
-	    printf(" *ERROR in CalculiX: the number of characters in the name of the input deck (without .inp) exceeds 127 characters\n");
+	    printf(" *ERROR in Jtufem: the number of characters in the name of the input deck (without .inp) exceeds 127 characters\n");
 	    FORTRAN(stop,());
 	  }
 	  strcpy(jobnamec,argv[i+1]);
@@ -278,7 +278,7 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
       }
       if(jin==0){
 	if(strlen(argv[1])>127){
-	  printf(" *ERROR in CalculiX: the number of characters in the name of the input deck (without .inp) exceeds 127 characters\n");
+	  printf(" *ERROR in Jtufem: the number of characters in the name of the input deck (without .inp) exceeds 127 characters\n");
 	  FORTRAN(stop,());
 	}
 	strcpy(jobnamec,argv[1]);
@@ -296,12 +296,30 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
     FORTRAN(openfile,(jobnamef));
 
     printf("\n************************************************************\n\n");
-    printf("CalculiX Version 2.21, Copyright(C) 1998-2023 Guido Dhondt\n");
-    printf("CalculiX comes with ABSOLUTELY NO WARRANTY. This is free\n");
-    printf("software, and you are welcome to redistribute it under\n");
-    printf("certain conditions, see gpl.htm\n\n");
-    printf("************************************************************\n\n");
-    printf("You are using an executable made on Чт 03 авг 2023 19:01:20 EEST\n");
+    printf("\n");
+    printf("------------------------------------------------------------------------\n");
+    printf("JIAO TONG UNIVERSITY VIBRATION SHOCK& NOISE LABORATORY\n");
+    printf("HUA-SHAN ROAD 1954                              FAX +86 21 62820820-2221\n");
+    printf("200030 SHANGHAI PR.CHINA\n");
+    printf("------------------------------------------------------------------------\n");
+    printf("\n");
+    printf("   **********   **********   **    **  ********  ********  **         **\n");
+    printf("        **          **       **    **  **        **        ** **   ** **\n");
+    printf("        **          **       **    **  ********  **        **    *    **\n");
+    printf("        **          **       **    **  **        ********  **         **\n");
+    printf("        **          **       **    **  **        **        **         **\n");
+    printf("  **    **          **       **    **  **        **        **         **\n");
+    printf("   ******           **        ******   **        ********  **         **\n");
+    printf("\n");
+    printf("\n");
+    printf("                  TEST AND ANALYSIS INTEGRATION SYSTEM\n");
+    printf("\n");
+    printf("------------------------------------------------------------------------\n");
+    // TODO: Replace "Specific Version" with your actual software version
+    printf("SHOW VERSION: %s\n", "Specific Version");
+    printf("------------------------------------------------------------------------\n");
+    printf("Copyright (c) 1995  SHANHAI JIAO TONG UNIVERSITY SHANGHAI PR.CHINA\n");
+    printf("\n");
     fflush(stdout);
 
     NNEW(ipoinp,ITG,2*nentries);
@@ -1201,7 +1219,7 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
     if((nener==1)&&(nenerold==0)){
       NNEW(ener,double,mi[0]**ne*2);
       if((istep>1)&&(iperturb[0]>1)){
-	printf(" *ERROR in CalculiX: in nonlinear calculations\n");
+	printf(" *ERROR in Jtufem: in nonlinear calculations\n");
 	printf("        energy output must be selected in the first step\n\n");
 	FORTRAN(stop,());
       }
@@ -1374,7 +1392,7 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
 	  mpcinfo[3]=maxlenmpc;
 
 	  if(icascade!=0){
-	    printf(" *ERROR in CalculiX: the matrix structure may");
+	    printf(" *ERROR in Jtufem: the matrix structure may");
 	    printf("        change due to nonlinear equations;");
 	    printf("        a purely linear calculation is not");
 	    printf("        feasible; use NLGEOM on the *STEP card.");
@@ -1475,7 +1493,7 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
 	for(i=0;i<3;i++){nzsprevstep[i]=nzs[i];}
 
 #else
-	printf(" *ERROR in CalculiX: the ARPACK library is not linked\n\n");
+	printf(" *ERROR in Jtufem: the ARPACK library is not linked\n\n");
 	FORTRAN(stop,());
 #endif
 
@@ -1511,7 +1529,7 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
 	for(i=0;i<3;i++){nzsprevstep[i]=nzs[i];}
 
 #else
-	printf(" *ERROR in CalculiX: the ARPACK library is not linked\n\n");
+	printf(" *ERROR in Jtufem: the ARPACK library is not linked\n\n");
 	FORTRAN(stop,());
 #endif
 
@@ -1535,7 +1553,7 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
 	       ibody,xbody,&nbody,thicke,jobnamec,&nmat,ielprop,prop,
 	       orname,typeboun,t0g,t1g,&mcs,&istep);
 #else
-      printf(" *ERROR in CalculiX: the ARPACK library is not linked\n\n");
+      printf(" *ERROR in Jtufem: the ARPACK library is not linked\n\n");
       FORTRAN(stop,());
 #endif
     }
@@ -2062,8 +2080,31 @@ void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
   
   printf("________________________________________\n\n");
   
-  printf("Total CalculiX Time: %lf\n", totalCalculixTime);
-
+  printf("Total Jtufem Time: %lf\n", totalCalculixTime);
+  printf("\n");
+  printf("------------------------------------------------------------------------\n");
+  printf("JIAO TONG UNIVERSITY VIBRATION SHOCK& NOISE LABORATORY\n");
+  printf("HUA-SHAN ROAD 1954                              FAX +86 21 62820820-2221\n");
+  printf("200030 SHANGHAI PR.CHINA\n");
+  printf("------------------------------------------------------------------------\n");
+  printf("\n");
+  printf("   **********   **********   **    **  ********  ********  **         **\n");
+  printf("        **          **       **    **  **        **        ** **   ** **\n");
+  printf("        **          **       **    **  ********  **        **    *    **\n");
+  printf("        **          **       **    **  **        ********  **         **\n");
+  printf("        **          **       **    **  **        **        **         **\n");
+  printf("  **    **          **       **    **  **        **        **         **\n");
+  printf("   ******           **        ******   **        ********  **         **\n");
+  printf("\n");
+  printf("\n");
+  printf("                  TEST AND ANALYSIS INTEGRATION SYSTEM\n");
+  printf("\n");
+  printf("------------------------------------------------------------------------\n");
+  // TODO: Replace "Specific Version" with your actual software version
+  printf("SHOW VERSION: %s\n", "Specific Version");
+  printf("------------------------------------------------------------------------\n");
+  printf("Copyright (c) 1995  SHANHAI JIAO TONG UNIVERSITY SHANGHAI PR.CHINA\n");
+  printf("\n");
   printf("________________________________________\n");
 
   return;

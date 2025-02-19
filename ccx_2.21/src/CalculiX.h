@@ -487,7 +487,7 @@ void FORTRAN(calculateh,(ITG *nk,double *v,double *veold,double *stn,
 void FORTRAN(calculatehmid,(ITG *nktet_,double *h,ITG *ipoed,ITG *iedg,
 			    ITG *iedgmid));
 
-void CalculiXstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
+void Jtufemstep(int argc,char argv[][133],ITG **nelemloadp,double **xloadp,
 		  ITG *nload,char **sideloadp,double *timepar,ITG *ne,
                   ITG **ipkonp,ITG **konp,char **lakonp,ITG *nk,double **cop,
                   double **voldp,double **veoldp,double **accoldp,

@@ -1,7 +1,7 @@
 #!/bin/sh
 for x in *.f *.c
 do
-    if [ "$x" = "CalculiX.c" ]; then
+    if [ "$x" = "Jtufem.c" ]; then
 	echo $x "is kept"
 	continue
     fi

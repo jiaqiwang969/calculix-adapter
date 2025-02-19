@@ -1,5 +1,5 @@
 !
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !              Copyright (C) 1998-2023 Guido Dhondt
 !
 !     This program is free software; you can redistribute it and/or
@@ -55,7 +55,7 @@
 !     
       elseif(lakon(nelem)(2:8).eq.'ACCTUBO') then
 !
-!        code not available in the internet distribution of CalculiX
+!        code not available in the internet distribution of Jtufem
 !         
          call acctube_one(node1,node2,nodem,nelem,lakon,kon,ipkon,
      &        nactdog,identity,ielprop,prop,kflag,v,xflow,f,
@@ -64,14 +64,14 @@
 !
       elseif(lakon(nelem)(2:8).eq.'ACCTUBE') then
 !
-!        code not available in the internet distribution of CalculiX
+!        code not available in the internet distribution of Jtufem
 !
          call acctube(node1,node2,nodem,nelem,lakon,kon,ipkon,
      &        nactdog,identity,ielprop,prop,kflag,v,xflow,f,
      &        nodef,idirf,df,cp,r,physcon,dvi,numf,set,mi,ider,
      &        ttime,time,iaxial,iplausi)
 !
-!	 code not available in the internet distribution of CalculiX
+!	 code not available in the internet distribution of Jtufem
 !
       elseif(lakon(nelem)(2:5).eq.'AVLV') then 
 !
@@ -107,7 +107,7 @@
      &     nodef,idirf,df,cp,r,physcon,numf,set,mi,ider,ttime,time,
      &     iaxial,iplausi)
 !
-!     code not available in the internet distribution of CalculiX
+!     code not available in the internet distribution of Jtufem
 !
       elseif(lakon(nelem)(2:5).eq.'FDPF') then 
          call free_disc_pumping(node1,node2,nodem,nelem,lakon,kon,ipkon,
@@ -116,7 +116,7 @@
      &        nshcon,rhcon,nrhcon,ntmat_,co,vold,mi,ttime,time,
      &        iaxial,iplausi)
 !  
-!     code not available in the internet distribution of CalculiX
+!     code not available in the internet distribution of Jtufem
 ! 
       elseif(lakon(nelem)(2:5).eq.'FCVF') then 
          call free_convection(node1,node2,nodem,nelem,lakon,kon,ipkon,
@@ -209,7 +209,7 @@
      &        nodef,idirf,df,cp,r,physcon,dvi,numf,set,co,vold,mi,
      &        ttime,time,iaxial,iplausi)
 ! 
-!     code not available in the internet distribution of CalculiX
+!     code not available in the internet distribution of Jtufem
 !
       elseif(lakon(nelem)(2:4).eq.'RCV') then   
 !
@@ -218,7 +218,7 @@
      &     nodef,idirf,df,cp,R,dvi,numf,set,mi,ttime,time,
      &     iaxial,iplausi)
 !
-!     code not available in the internet distribution of CalculiX
+!     code not available in the internet distribution of Jtufem
 !
       elseif(lakon(nelem)(2:3).eq.'RO') then   
 !
@@ -240,7 +240,7 @@
      &        nshcon,rhcon,nrhcon,ntmat_,mi,ttime,time,iaxial,
      &        co,vold,iplausi)
 !
-!     code not available in the internet distribution of CalculiX
+!     code not available in the internet distribution of Jtufem
 !
       elseif((lakon(nelem)(2:5).eq.'RIMS').or.
      &       (lakon(nelem)(2:8).eq.'RIMFLEX')) then   
@@ -250,7 +250,7 @@
      &        nodef,idirf,df,cp,r,physcon,dvi,numf,set,mi,
      &        ttime,time,iaxial,co,vold,iplausi)
 !     
-!     code not available in the internet distribution of CalculiX
+!     code not available in the internet distribution of Jtufem
 !
       elseif(lakon(nelem)(2:6).eq.'SPUMP') then 
 !

@@ -1,5 +1,5 @@
 !
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !              Copyright (C) 1998-2023 Guido Dhondt
 !
 !     This program is free software; you can redistribute it and/or
@@ -34,7 +34,7 @@
       write(*,*) '       is not stored in the frd-file. Yet, '
       write(*,*) '       it is taken into account in the element'
       write(*,*) '       count: inconsistency. Please contact the'
-      write(*,*) '       author of CalculiX'
+      write(*,*) '       author of Jtufem'
       call exit(201)
 !
       return

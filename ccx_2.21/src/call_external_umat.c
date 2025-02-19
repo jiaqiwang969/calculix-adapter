@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -18,7 +18,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#include"CalculiX.h"
+#include"Jtufem.h"
 
 typedef double abaqus_real;
 typedef int    abaqus_int;

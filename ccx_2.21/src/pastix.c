@@ -1,4 +1,4 @@
-/* CalculiX - A 3-dimensional finite element program */
+/* Jtufem - A 3-dimensional finite element program */
 /*Copyright (C) 1998-2023 Guido Dhondt*/
 
 /* This program is free software; you can redistribute it and/or */
@@ -26,7 +26,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 #include "pastix.h"
 
 /* next 3 lines are for the simulateous use of PARDISO and PaStiX */
@@ -224,7 +224,7 @@ void pastix_init(double *ad, double *au, double *adb, double *aub,
 	// Init integer and double parameters with default values
 	pastixInitParam( piparm, pdparm );
 	
-	// Set best PaStiX parameters for CalculiX usage
+	// Set best PaStiX parameters for Jtufem usage
     piparm[IPARM_ORDERING]  				= PastixOrderScotch;
     if( mode == AS || mode == CP ){
         piparm[IPARM_SCHEDULER] 			= PastixSchedStatic;

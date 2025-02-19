@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -19,7 +19,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 void refinemesh(ITG *nk,ITG *ne,double *co,ITG *ipkon,ITG *kon,
 		double *v,double *veold,double *stn,double *een,

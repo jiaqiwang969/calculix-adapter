@@ -1,5 +1,5 @@
 
-/*     CalculiX - A 3-dimensional finite element program                   */
+/*     Jtufem - A 3-dimensional finite element program                   */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -18,7 +18,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 int log_realloc=-1;
 
@@ -43,7 +43,7 @@ void *u_calloc(size_t num,size_t size,const char *file,const int line, const cha
     printf(" *ERROR in u_calloc: error allocating memory\n");
     printf("variable=%s, file=%s, line=%d, num=%ld, size=%ld\n",ptr_name,file,line,num,size);
     if(num<0){
-	printf("\n It looks like you may need the i8 (integer*8) version of CalculiX\n");
+	printf("\n It looks like you may need the i8 (integer*8) version of Jtufem\n");
     }
     exit(16);
   }

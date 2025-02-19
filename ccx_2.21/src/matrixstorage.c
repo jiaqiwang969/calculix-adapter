@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                   */
+/*     Jtufem - A 3-dimensional finite element program                   */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -19,7 +19,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 #include "matrixstorage.h"
 
 void matrixstorage(double *ad, double **aup, double *adb, double *aub, 
@@ -117,7 +117,7 @@ void matrixstorage(double *ad, double **aup, double *adb, double *aub,
   else{
     
     /* transformation: storing the matrices in transformed coordinates 
-       (needed by turboreduce (not part of CalculiX)) */
+       (needed by turboreduce (not part of Jtufem)) */
 
     if((*nboun!=0)||(*nmpc!=0)){
       printf(" *ERROR in matrixstorage: matrix storage in local\n");
@@ -363,7 +363,7 @@ void matrixstorage(double *ad, double **aup, double *adb, double *aub,
 	  
 	  
       /* transformation: storing the matrices in transformed coordinates 
-	 (needed by turboreduce (not part of CalculiX)) */
+	 (needed by turboreduce (not part of Jtufem)) */
 	  
       ndim2=*neq+2**nzs;
 	  

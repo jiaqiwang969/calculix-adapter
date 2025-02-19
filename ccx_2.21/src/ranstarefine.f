@@ -31,7 +31,7 @@ C
 C Author: Hugo Pfoertner, Oberhaching, Germany
 C
 C Version History (left in German):
-! 22.06.21 adapted fminsi for the mesh refinement procedure in CalculiX
+! 22.06.21 adapted fminsi for the mesh refinement procedure in Jtufem
 !          Author: Guido Dhondt
 C 02.06.01 English translation of comments, LGPL header added
 C 27.11.93 ZUFALLSZAHLENGENERATOR RANEWR UND INIRAN EINGEBAUT

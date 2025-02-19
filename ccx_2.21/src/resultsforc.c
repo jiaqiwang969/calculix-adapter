@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -20,7 +20,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 void resultsforc(ITG *nk,double *f,double *fn,ITG *nactdof,ITG *ipompc,
 		 ITG *nodempc,double *coefmpc,char *labmpc,ITG *nmpc,
@@ -137,7 +137,7 @@ void resultsforc(ITG *nk,double *f,double *fn,ITG *nactdof,ITG *ipompc,
 
 }
 /*c!
-c!     CalculiX - A 3-dimensional finite element program
+c!     Jtufem - A 3-dimensional finite element program
 c!              Copyright (C) 1998-2023 Guido Dhondt
 c!
 c!     This program is free software; you can redistribute it and/or

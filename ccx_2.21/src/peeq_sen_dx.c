@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -21,7 +21,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 void peeq_sen_dx(double *co,ITG *nk,ITG *kon,ITG *ipkon,char *lakon,ITG *ne,
 	double *depn,double *elcon,ITG *nelcon,

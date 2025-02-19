@@ -1,5 +1,5 @@
 !     
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !     Copyright (C) 1998-2023 Guido Dhondt
 !     
 !     This program is free software; you can redistribute it and/or
@@ -142,7 +142,7 @@
         write(13,'(a5,''UDATE'',14x,a20)') p1,newdate
         write(13,'(a5,''UTIME'',14x,a8)') p1,newclock
         write(13,'(a5,''UHOST'')') p1
-        write(13,'(a5,''UPGM               CalculiX'')') p1
+        write(13,'(a5,''UPGM               Jtufem'')') p1
         write(13,'(a5,''UDIR'')') p1
         write(13,'(a5,''UDBN'')') p1
 !     

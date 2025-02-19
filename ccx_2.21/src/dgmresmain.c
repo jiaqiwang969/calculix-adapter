@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -20,7 +20,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 static ITG *nelt1,*ia1,*ja1,*isym1,*itol1,*itmax1,*iter1=NULL,*igwk1=NULL,
     *lrgw1,*ligw1,*iwork1,*nestart1,*iunit1,*ierr1=NULL;

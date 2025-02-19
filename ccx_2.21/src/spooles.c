@@ -1,5 +1,5 @@
 
-/*     CalculiX - A 3-dimensional finite element program                   */
+/*     Jtufem - A 3-dimensional finite element program                   */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -37,7 +37,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 #include "spooles.h"
 
 #if USE_MT
@@ -478,7 +478,7 @@ void spooles_factor(double *ad, double *au,  double *adb, double *aub,
 	}
 
 	/*
-	 * Create the InpMtx object from the CalculiX matrix
+	 * Create the InpMtx object from the Jtufem matrix
 	 *      representation
 	 */
 

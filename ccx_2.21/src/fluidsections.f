@@ -1,5 +1,5 @@
 !     
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !     Copyright (C) 1998-2023 Guido Dhondt
 !     
 !     This program is free software; you can redistribute it and/or
@@ -850,10 +850,10 @@ c     enddo
 !     - Bragg (ORBG)
 !     - Bleed Tapping (ORBT)
 !     - own table+Albers rotating correction (not in the internet distribution
-!       of CalculiX (ORMA)
+!       of Jtufem (ORMA)
 !     - McGreehan and Schotsch (ORMM)
 !     - Parker and Kercher+Albers rotation correction (not in the internet
-!       distribution of CalculiX) (ORPA)
+!       distribution of Jtufem) (ORPA)
 !     - Parker and Kercher+Mac Grehan and Schotsch rotation correction (ORPM)
 !     - Preswirl Nozzle (ORPN)          
 !

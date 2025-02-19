@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                     */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -27,7 +27,7 @@ _set_output_format(_TWO_DIGIT_EXPONENT);
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 #ifdef CALCULIX_MPI
 ITG myid = 0,nproc = 0;
@@ -114,12 +114,12 @@ int main(int argc,char *argv[])
 
   clock_gettime(CLOCK_MONOTONIC, &totalCalculixTimeStart);
 
-  if(argc==1){printf("Usage: CalculiX.exe -i jobname\n");FORTRAN(stop,());}
+  if(argc==1){printf("Usage: Jtufem.exe -i jobname\n");FORTRAN(stop,());}
   else{
     for(i=1;i<argc;i++){
       if(strcmp1(argv[i],"-i")==0){
 	if(strlen(argv[i+1])>127){
-	  printf(" *ERROR in CalculiX: the number of characters in the name of the input deck (without .inp) exceeds 127 characters\n");
+	  printf(" *ERROR in Jtufem: the number of characters in the name of the input deck (without .inp) exceeds 127 characters\n");
 	  FORTRAN(stop,());
 	}
 	strcpy2(jobnamec,argv[i+1],132);
@@ -131,7 +131,7 @@ int main(int argc,char *argv[])
     }
     if(jin==0){
       if(strlen(argv[1])>127){
-	printf(" *ERROR in CalculiX: the number of characters in the name of the input deck (without .inp) exceeds 127 characters\n");
+	printf(" *ERROR in Jtufem: the number of characters in the name of the input deck (without .inp) exceeds 127 characters\n");
 	FORTRAN(stop,());
       }
       strcpy2(jobnamec,argv[1],132);
@@ -148,17 +148,30 @@ int main(int argc,char *argv[])
 
   FORTRAN(openfile,(jobnamef));
 
-  printf("\n************************************************************\n\n");
-#ifdef INTSIZE64
-  printf("CalculiX Version 2.21 i8, Copyright(C) 1998-2023 Guido Dhondt\n");
-#else
-  printf("CalculiX Version 2.21, Copyright(C) 1998-2023 Guido Dhondt\n");
-#endif
-  printf("CalculiX comes with ABSOLUTELY NO WARRANTY. This is free\n");
-  printf("software, and you are welcome to redistribute it under\n");
-  printf("certain conditions, see gpl.htm\n\n");
-  printf("************************************************************\n\n");
-  printf("You are using an executable made on Чт 03 авг 2023 19:01:20 EEST\n");
+  printf("\n");
+  printf("------------------------------------------------------------------------\n");
+  printf("JIAO TONG UNIVERSITY VIBRATION SHOCK& NOISE LABORATORY\n");
+  printf("HUA-SHAN ROAD 1954                              FAX +86 21 62820820-2221\n");
+  printf("200030 SHANGHAI PR.CHINA\n");
+  printf("------------------------------------------------------------------------\n");
+  printf("\n");
+  printf("   **********   **********   **    **  ********  ********  **         **\n");
+  printf("        **          **       **    **  **        **        ** **   ** **\n");
+  printf("        **          **       **    **  ********  **        **    *    **\n");
+  printf("        **          **       **    **  **        ********  **         **\n");
+  printf("        **          **       **    **  **        **        **         **\n");
+  printf("  **    **          **       **    **  **        **        **         **\n");
+  printf("   ******           **        ******   **        ********  **         **\n");
+  printf("\n");
+  printf("\n");
+  printf("                  TEST AND ANALYSIS INTEGRATION SYSTEM\n");
+  printf("\n");
+  printf("------------------------------------------------------------------------\n");
+  // TODO: Replace "Specific Version" with your actual software version
+  printf("SHOW VERSION: %s\n", "Specific Version");
+  printf("------------------------------------------------------------------------\n");
+  printf("Copyright (c) 1995  SHANHAI JIAO TONG UNIVERSITY SHANGHAI PR.CHINA\n");
+  printf("\n");
   fflush(stdout);
 
   NNEW(ipoinp,ITG,2*nentries);
@@ -1020,7 +1033,7 @@ int main(int argc,char *argv[])
     if((nener==1)&&(nenerold==0)){
       NNEW(ener,double,2*mi[0]*ne);
       if((istep>1)&&(iperturb[0]>1)){
-	printf(" *ERROR in CalculiX: in nonlinear calculations\n");
+	printf(" *ERROR in Jtufem: in nonlinear calculations\n");
 	printf("        energy output requests, if any,\n");
 	printf("        must be specified in the first step\n\n");
 	FORTRAN(stop,());
@@ -1223,7 +1236,7 @@ int main(int argc,char *argv[])
 	  mpcinfo[3]=maxlenmpc;
 
 	  if(icascade!=0){
-	    printf(" *ERROR in CalculiX: the matrix structure may");
+	    printf(" *ERROR in Jtufem: the matrix structure may");
 	    printf("        change due to nonlinear equations;");
 	    printf("        a purely linear calculation is not");
 	    printf("        feasible; use NLGEOM on the *STEP card.");
@@ -1324,7 +1337,7 @@ int main(int argc,char *argv[])
 	for(i=0;i<3;i++){nzsprevstep[i]=nzs[i];}
 
 #else
-	printf(" *ERROR in CalculiX: the ARPACK library is not linked\n\n");
+	printf(" *ERROR in Jtufem: the ARPACK library is not linked\n\n");
 	FORTRAN(stop,());
 #endif
 
@@ -1360,7 +1373,7 @@ int main(int argc,char *argv[])
 	for(i=0;i<3;i++){nzsprevstep[i]=nzs[i];}
 
 #else
-	printf(" *ERROR in CalculiX: the ARPACK library is not linked\n\n");
+	printf(" *ERROR in Jtufem: the ARPACK library is not linked\n\n");
 	FORTRAN(stop,());
 #endif
 
@@ -1384,7 +1397,7 @@ int main(int argc,char *argv[])
 	       ibody,xbody,&nbody,thicke,jobnamec,&nmat,ielprop,prop,
 	       orname,typeboun,t0g,t1g,&mcs,&istep);
 #else
-      printf(" *ERROR in CalculiX: the ARPACK library is not linked\n\n");
+      printf(" *ERROR in Jtufem: the ARPACK library is not linked\n\n");
       FORTRAN(stop,());
 #endif
     }
@@ -1914,9 +1927,34 @@ int main(int argc,char *argv[])
   
   printf("________________________________________\n\n");
   
-  printf("Total CalculiX Time: %lf\n", totalCalculixTime);
+  printf("Total Jtufem Time: %lf\n", totalCalculixTime);
 
   printf("________________________________________\n");
+
+  printf("\n");
+  printf("------------------------------------------------------------------------\n");
+  printf("JIAO TONG UNIVERSITY VIBRATION SHOCK& NOISE LABORATORY\n");
+  printf("HUA-SHAN ROAD 1954                              FAX +86 21 62820820-2221\n");
+  printf("200030 SHANGHAI PR.CHINA\n");
+  printf("------------------------------------------------------------------------\n");
+  printf("\n");
+  printf("   **********   **********   **    **  ********  ********  **         **\n");
+  printf("        **          **       **    **  **        **        ** **   ** **\n");
+  printf("        **          **       **    **  ********  **        **    *    **\n");
+  printf("        **          **       **    **  **        ********  **         **\n");
+  printf("        **          **       **    **  **        **        **         **\n");
+  printf("  **    **          **       **    **  **        **        **         **\n");
+  printf("   ******           **        ******   **        ********  **         **\n");
+  printf("\n");
+  printf("\n");
+  printf("                  TEST AND ANALYSIS INTEGRATION SYSTEM\n");
+  printf("\n");
+  printf("------------------------------------------------------------------------\n");
+  // TODO: Replace "Specific Version" with your actual software version
+  printf("SHOW VERSION: %s\n", "Specific Version");
+  printf("------------------------------------------------------------------------\n");
+  printf("Copyright (c) 1995  SHANHAI JIAO TONG UNIVERSITY SHANGHAI PR.CHINA\n");
+  printf("\n");
 
   return 0;
       

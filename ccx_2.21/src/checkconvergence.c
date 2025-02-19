@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 #ifdef SPOOLES 
    #include "spooles.h"
 #endif
@@ -513,7 +513,7 @@ void checkconvergence(double *co, ITG *nk, ITG *kon, ITG *ipkon, char *lakon,
 
         /* if the user has not defined deltmx on the *HEAT
 	 TRANSFER card it is set to a large value (1.e30,
-	 cf. CalculiX.c); therefore, a comparison of cam[2]
+	 cf. Jtufem.c); therefore, a comparison of cam[2]
 	 with deltmx only makes sense for cam[2]<1.e30 */
       
 	if((*iit>=i0)||(fabs(ram[0])>1.e20)||(fabs(cam[0])>1.e20)||
@@ -572,7 +572,7 @@ void checkconvergence(double *co, ITG *nk, ITG *kon, ITG *ipkon, char *lakon,
 
 		/* if the user has not defined deltmx on the *HEAT
                    TRANSFER card it is set to a large value (1.e30,
-                   cf. CalculiX.c); therefore, a comparison of cam[2]
+                   cf. Jtufem.c); therefore, a comparison of cam[2]
                    with deltmx only makes sense for cam[2]<1.e30 */
 
 		if((cam[2]<1.e30)&&(cam[2]>*deltmx)) idivergence=2;

@@ -110,7 +110,7 @@ OCCXC += $(OBJDIR)/ConfigReader.o $(OBJDIR)/2D3DCoupling.o $(OBJDIR)/OutputBuffe
 
 
 $(OBJDIR)/ccx_preCICE: $(OBJDIR) $(OCCXMAIN) $(OBJDIR)/ccx_$(CCX_VERSION).a
-	$(FC) -fopenmp -Wall -O3 -o $@ $(OCCXMAIN) $(OBJDIR)/ccx_$(CCX_VERSION).a $(LIBS) 
+	$(FC) -fopenmp -Wall -O3 -o $@ $(OCCXMAIN) $(OBJDIR)/ccx_$(CCX_VERSION).a $(LIBS)
 #	$(FC) -fopenmp -Wall -O3 $(OCCXMAIN) $(OBJDIR)/ccx_$(CCX_VERSION).a $(LIBS) -o $@
 
 # $(LIBS)

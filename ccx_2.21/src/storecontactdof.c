@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                   */
+/*     Jtufem - A 3-dimensional finite element program                   */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 /*     This program is free software; you can redistribute it and/or     */
 /*     modify it under the terms of the GNU General Public License as    */
@@ -18,7 +18,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 void storecontactdof(ITG *nope,ITG *nactdof, ITG *mt, ITG *konl, ITG **ikactcontp, 
 		     ITG *nactcont,ITG *nactcont_, double *bcont, double *fnl, 

@@ -1,5 +1,5 @@
 !
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !              Copyright (C) 1998-2023 Guido Dhondt
 !
 !     This program is free software; you can redistribute it and/or
@@ -22,7 +22,7 @@
 !
 !     stores the order in which the input is to be read in fields
 !     ipoinp and inp; before adding keywords to the list below
-!     look at the CalculiX documentation, section "Program structure"
+!     look at the Jtufem documentation, section "Program structure"
 !     subsection "Allocation of the fields" subsubsection "readinput".
 !
 !     order:

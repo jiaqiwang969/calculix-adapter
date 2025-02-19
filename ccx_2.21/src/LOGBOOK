@@ -171,7 +171,7 @@ Sept 2000       - started checking implicit and explicit dynamics
 1 Oct 2000      - the only environment variable left is the job-name
                   all other file names are derived from the job-name:
                   .inp,.dat,.frd,.eig and .sta
-                - changed CALCULIX into CalculiX
+                - changed CALCULIX into Jtufem
                 - stored increment information in the .sta file
 
 15 Oct 2000     - started to replace the FORTRAN input files by C input
@@ -241,7 +241,7 @@ Sept 2000       - started checking implicit and explicit dynamics
 22 Apr 2001     - iterative procedure for nonlinear calculations works
 
 30 Apr 2001     - collapsed elements work now! (changed the add*f subroutines)
-                - corrected some storage inconsistensies in CalculiX.c; should
+                - corrected some storage inconsistensies in Jtufem.c; should
                   solve the problems encountered when several steps occur in 
                   the same input deck.
 
@@ -358,7 +358,7 @@ March 2002      - started to work on the theory manual.
 6 Sept 2002     - corrected wrong file names in some of the *WARNING
                   and *ERROR messages
                 - initialized all allocation size variables in
-                  CalculiX.c
+                  Jtufem.c
 
 16 Sept 2002    - started to code umat_elastic_fiber.f to model fiber
                   reinforced hyperelastic materials
@@ -437,7 +437,7 @@ Dec 2002        - started to work on single crystal plasticity
                   of the increment and not rely on intermediate values
 
 04 Mar 2003     - solved the problem with beammr (definition of neq
-                  in CalculiX.c for icascade!=0)
+                  in Jtufem.c for icascade!=0)
 
 02 Apr 2003     - started to work on wedges and 4-node tets
                 - corrected the implementation of the alpha method
@@ -687,7 +687,7 @@ Dec 2002        - started to work on single crystal plasticity
                   and residual forces are stored in the frd file
 
 14 Oct 2004     - started an interface between the ABAQUS umat user
-                  routine and CalculiX umat user routine.
+                  routine and Jtufem umat user routine.
 
 19 Oct 2004     - introduced mechanical strain to calculate the
                   energy density and for the ABAQUS umat user routine
@@ -698,7 +698,7 @@ Dec 2002        - started to work on single crystal plasticity
                   DC3D10,DC3D15 and DC3D20 for compatility with ABAQUS.
                   Internally, they are identical to C3D4, C3D6 etc.
 
-30 Oct 2004     - CalculiX checks length of set names, amplitude names..
+30 Oct 2004     - Jtufem checks length of set names, amplitude names..
                   to verify whether they do not exceed 20 characters
 
 31 Oct 2004     - removed alph from linel: everything is based on 
@@ -796,7 +796,7 @@ Dec 2002        - started to work on single crystal plasticity
 
 5 July 2005     - created user subroutine massflowrate.f
 
-6 July 2005     - removed an error in CalculiX.c: if nam>0, iamload
+6 July 2005     - removed an error in Jtufem.c: if nam>0, iamload
                   must be sorted too in routine isortiddc.
 
 10 July 2005    - corrected an error in radflowload.f
@@ -889,7 +889,7 @@ Dec 2002        - started to work on single crystal plasticity
                   calculations: instead of *SOLID SECTION, *GAS SECTION
                   should be used.
 
-9 Feb 2006      - corrected an error related to nam and nam_ in CalculiX.c
+9 Feb 2006      - corrected an error related to nam and nam_ in Jtufem.c
                   and calinput.f
 
 27 Feb 2006     - corrected an error in dyna.c and steadystate.c: t0,
@@ -1872,7 +1872,7 @@ Dec 2002        - started to work on single crystal plasticity
 7 Aug 2011      - introduced the mechanical strain ME as output variable
                 - corrected some mistakes in umat_abaqusnl.f 
 
-9 Aug 2011      - corrected a mistake in CalculiX.c/allocation.f
+9 Aug 2011      - corrected a mistake in Jtufem.c/allocation.f
                  (initialization of xstate/definition of nstate)
 
 7 Sept 2011     - corrected errors in mastructcs.c and mafillsmcs.f
@@ -2274,7 +2274,7 @@ Dec 2002        - started to work on single crystal plasticity
 
  15 Oct 2013    - started debugging inductive heating
 
- 26 Oct 2013    - started properly deallocating all fields in CalculiX.c
+ 26 Oct 2013    - started properly deallocating all fields in Jtufem.c
 
  30 Oct 2013    - actualized frdread.c
 
@@ -3006,14 +3006,14 @@ Dec 2002        - started to work on single crystal plasticity
  5 May 2017     - corrected an error in cyclicsymmetrymodels.f
                 - looked into a routine for tertiary creep
                 - stored the jobname in the environment variable
-                 CCX_JOBNAME_GETJOBNAME in CalculiX.c (setenv)
+                 CCX_JOBNAME_GETJOBNAME in Jtufem.c (setenv)
                 - implemented .dat output of body heating for element
                  sets (key = EBHE)
 
  9 May 2017     - made some changes for the thermal error estimator
 
  2 June 2017    - started to work on the integration of isaac into
-                 CalculiX
+                 Jtufem
                 - activated formgradient and formgradinterpol in
                  sensitivity.c
                 - KNOT information is not stored in the .dat file 
@@ -3269,7 +3269,7 @@ Dec 2002        - started to work on single crystal plasticity
                 - introduced absolute convergence criteria in checkconvnet.c
                 - inserted a warning in case not all temperatures at inlets and
                  outlets are defined by a boundary condition
-                - wrote the CalculiX version in the viewfactor file;
+                - wrote the Jtufem version in the viewfactor file;
                  checking of the version at while reading this file
                 - replaced single precision constants to double precision
                  constants throughout
@@ -3318,7 +3318,7 @@ Dec 2002        - started to work on single crystal plasticity
  28 Jan 2018    - worked on compressible cfd; bumpsuperfineshallow and
                  carter10visc seem to work
 
- 2 Feb 2018     - reformulated field ipoinp in CalculiX.c as allocatable
+ 2 Feb 2018     - reformulated field ipoinp in Jtufem.c as allocatable
                  field
                 - wrote the user subroutine fricheat.f
                 - updated the documentation for the STRAIN FREE activation of
@@ -3505,7 +3505,7 @@ Dec 2002        - started to work on single crystal plasticity
                  loading: may lead to stresses
                 - update the documentation for thickness definitions (shells..)
                  in axisymmetric calculations
-                - removed a discrepancy between CalculiX and Abaqus concerning
+                - removed a discrepancy between Jtufem and Abaqus concerning
                  the use of *NODAL THICKNESS   
                 - removed some errors in shellsections.f and beamsections.f
                 - coded *BASE MOTION for acceleration in harmonic steady
@@ -3600,7 +3600,7 @@ Dec 2002        - started to work on single crystal plasticity
                  of the fields and the method)
                 - formulated electromagnetics for steady state solutions
 
- 14 Sept 2018   - documented the refinemesh procedure in the CalculiX
+ 14 Sept 2018   - documented the refinemesh procedure in the Jtufem
                  manual
                 - improved convergence criteria for fluid networks
 
@@ -4198,7 +4198,7 @@ Dec 2002        - started to work on single crystal plasticity
 
  31 Jan 2020    - tried to compile and link PaStiX, scotch...: no
                  success
-                - included PaStiX-statements in the CalculiX routines
+                - included PaStiX-statements in the Jtufem routines
 
  7 Feb 2020     - worked on the compilation of PaStiX and packages needed
                  by PaStiX
@@ -4209,7 +4209,7 @@ Dec 2002        - started to work on single crystal plasticity
                 - stored both memmpc_ and lenmpc into the restart files
                 - parallellized mafillsmas.f
 
- 14 Feb 2020    - got PaStiX in CalculiX to work
+ 14 Feb 2020    - got PaStiX in Jtufem to work
                 - parallellized interpolatestate.f
                 - worked on a random field update
 	        - corrected an error in totalcontact.f
@@ -4247,16 +4247,16 @@ Dec 2002        - started to work on single crystal plasticity
 	        - created a test directory specific for i8
 	        - changed getglobalresults.c (for use in refinement)
                 - created a file to deallocate all fields at the end
-	         of CalculiX.c
+	         of Jtufem.c
 
  18 Mar 2020    - updated refinemesh and its subroutines
                 - found and removed an error in mafillfreq_em.f
 	        - coded inputformat=3 in pastix.c
 	        - analyzed beamprand
-                - worked on an initialization routine for CalculiX
+                - worked on an initialization routine for Jtufem
 
  20 Mar 2020    - updated pastix.c: beamptied5 and beamptied6 work now
-                - finished initialization routine for CalculiX;
+                - finished initialization routine for Jtufem;
 	        - worked on automatic restart with refined mesh
                 - checked examples with cyclic symmetry for
 	         steady state dynamics and modal dynamics: seems ok.
@@ -4325,7 +4325,7 @@ Dec 2002        - started to work on single crystal plasticity
 
  6 May 2020     - updated pastix.c for inputformat=3; induction3 does not
                  converge yet
-                - moved the calculation of ipobody to CalculiX.c
+                - moved the calculation of ipobody to Jtufem.c
                 - updated the documentation for *element and *spring
 	        - implemented the inheritance of the distributed body
 	         loading (centrifugal, gravity..) to the refined mesh
@@ -4420,7 +4420,7 @@ Dec 2002        - started to work on single crystal plasticity
  9 July 2020    - included mortar contact in the documentation.
 
  10 July 2020   - updated the documentation about the PaStiX solver
-                - created CalculiXstep.c for the present CalculiX
+                - created Jtufemstep.c for the present Jtufem
 	         version
 
  11 July 2020   - reverted to the first order approximation in time
@@ -4858,7 +4858,7 @@ Dec 2002        - started to work on single crystal plasticity
 
  18 Nov 2021    - corrected some errors in allocation.f
                 - added iprestr to the argument list of restartshort.f
-	        (needed in CalculiX.c)
+	        (needed in Jtufem.c)
 	        - introduced the calculation of the principal axes of
 	        inertia for *coupling in combination with *distributing
                 - made a change in restarts.f (allowed for *restart,read
@@ -5057,7 +5057,7 @@ Dec 2002        - started to work on single crystal plasticity
                 - made a check in arpack.c on the size of ncv relative to
 		  n and nev
 
- 5 Sep 2022     - actualized CalculiXstep.c regarding the allocation
+ 5 Sep 2022     - actualized Jtufemstep.c regarding the allocation
                   and deallocation of set
 
  6 Sep 2022     - corrected an error in e_c3d_u1.f
@@ -5071,7 +5071,7 @@ Dec 2002        - started to work on single crystal plasticity
 
  25 Sep 2022    - wrote channeljoint.f
 
- 28 Sep 2022    - made a correction in CalculiX.c for advective elements
+ 28 Sep 2022    - made a correction in Jtufem.c for advective elements
                   in combination with contact (memory shift of the
 		  contact internal variables)
 

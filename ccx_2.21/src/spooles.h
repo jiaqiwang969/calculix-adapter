@@ -18,14 +18,14 @@
 #define __CCX_SPOOLES_H
 
 /*
- * separated from CalculiX.h: otherwise everyone would have to include
+ * separated from Jtufem.h: otherwise everyone would have to include
  * the spooles header files
  */
 
 #include <pthread.h>
-#include <misc.h>
-#include <FrontMtx.h>
-#include <SymbFac.h>
+#include "spooles/misc.h"
+#include "spooles/FrontMtx.h"
+#include "spooles/SymbFac.h"
 #if USE_MT
 #include <MT/spoolesMT.h>
 #endif

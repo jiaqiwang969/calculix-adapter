@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                     */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 #ifdef SPOOLES
 #include "spooles.h"
 #endif
@@ -238,7 +238,7 @@ void robustdesign(double *co,ITG *nk,ITG **konp,ITG **ipkonp,char **lakonp,
   
   /* if the sensitivity calculation is used in a optimization script
      this script usually contains a loop consisting of:
-     1. a call to CalculiX to define the sensitivities
+     1. a call to Jtufem to define the sensitivities
      2. a small modification of the surface geometry in a direction which
      decrease the objective function (only the design variables)
      3. a modification of the internal mesh in order to preserve

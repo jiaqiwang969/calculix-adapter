@@ -23,7 +23,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 #ifdef __WIN32
 #include <windows.h>

@@ -1,4 +1,4 @@
-/*     CalculiX - A 3-dimensional finite element program                 */
+/*     Jtufem - A 3-dimensional finite element program                 */
 /*              Copyright (C) 1998-2023 Guido Dhondt                          */
 
 /*     This program is free software; you can redistribute it and/or     */
@@ -21,12 +21,12 @@
 #include <string.h>
 
 #ifdef SPOOLES
-#include <misc.h>
-#include <FrontMtx.h>
-#include <SymbFac.h>
+#include "spooles/misc.h"
+#include "spooles/FrontMtx.h"
+#include "spooles/SymbFac.h"
 #endif
 
-#include "CalculiX.h"
+#include "Jtufem.h"
 
 #define min(a,b) ((a) <= (b) ? (a) : (b))
 #define max(a,b) ((a) >= (b) ? (a) : (b))

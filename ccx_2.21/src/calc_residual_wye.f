@@ -1,5 +1,5 @@
 !     
-!     CalculiX - A 3-dimensional finite element program
+!     Jtufem - A 3-dimensional finite element program
 !     Copyright (C) 1998-2023 Guido Dhondt
 !     
 !     This program is free software; you can redistribute it and/or
@@ -141,7 +141,7 @@
       elseif(ichan_num.eq.2) then            
         hq=dh2/dh1
 !     
-!     Interpolation as in CalculiX
+!     Interpolation as in Jtufem
         if((alpha.le.60.and.hq.le.1.d0).or.
      &       (alpha.le.90.d0.and.hq.le.2.d0/3.d0)) then
           zeta=0.95d0*((W2W1-2d0*dcos(alpha*pi/180))

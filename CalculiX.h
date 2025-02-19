@@ -71,6 +71,24 @@
 #define ITGFORMAT "d"
 #endif
 
+
+int precicec_isTimeWindowComplete(void);
+
+void getkdeltatemp_(double *co, ITG *ntmat_, double *vold,
+                    double *cocon, ITG *ncocon, ITG *iset,
+                    ITG *istartset, ITG *iendset, ITG *ipkon,
+                    char *lakon, ITG *kon, ITG *ialset,
+                    ITG *ielmat, ITG *mi, double *kdelta,
+                    double *reftemp);
+
+void getflux_(double *co, ITG *ntmat_, double *vold,
+              double *cocon, ITG *ncocon, ITG *iset,
+              ITG *istartset, ITG *iendset, ITG *ipkon,
+              char *lakon, ITG *kon, ITG *ialset,
+              ITG *ielmat, ITG *mi, double *flux);
+
+
+
 void FORTRAN(actideacti,(char *set,ITG *nset,ITG *istartset,ITG *iendset,
                          ITG *ialset,char *objectset,ITG *ipkon,ITG *ibject,
                          ITG *ne));
